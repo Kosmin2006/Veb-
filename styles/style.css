@@ -1,0 +1,281 @@
+/* БАЗОВІ СТИЛІ */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #eef3ef;
+  color: #222;
+  line-height: 1.5;
+}
+
+main {
+  padding: 1rem 2rem;
+}
+
+header {
+  background: #2d6a4f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  text-decoration: underline;
+}
+
+footer {
+  background: #1b4332;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* СПИСОК НОВИН (GRID — сторінка «Новини») */
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+/*  GRID ДЛЯ ГОЛОВНОЇ */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+/*  КАРТКА НОВИНИ */
+
+.news-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+}
+
+.news-img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-content {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.news-content p {
+  margin: 0 0 12px;
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.date {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.read-more {
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+  margin-top: auto;
+}
+
+.read-more:hover {
+  background: #1b4332;
+}
+
+/*  ARTICLE */
+
+.article-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.article-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.article-date {
+  color: #777;
+  margin-bottom: 1.3rem;
+  font-size: 0.95rem;
+}
+
+.article-card img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 1rem 0 1.5rem 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.article-text {
+  font-size: 1.07rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+.article-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.back-btn {
+  display: inline-block;
+  margin: 15px 0 20px 0;
+  padding: 8px 18px;
+  background: #2d6a4f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #1b4332;
+}
+
+/*  ФОРМА */
+
+
+form {
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background: #2d6a4f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1b4332;
+}
+
+/*  СОРТУВАННЯ */
+
+.sort-wrapper select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/*  АДАПТИВНІСТЬ */
+
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    margin: 0;
+    padding: 0.4rem;
+    background: #40916c;
+    border-radius: 6px;
+  }
+
+  .news-list,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
